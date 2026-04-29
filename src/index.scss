@@ -1,0 +1,147 @@
+// SCSS Variables
+$light-text: #6b6375;
+$light-text-h: #08060d;
+$light-bg: #fff;
+$light-border: #e5e4e7;
+$light-code-bg: #f4f3ec;
+$light-accent: #aa3bff;
+$light-accent-bg: rgba(170, 59, 255, 0.1);
+$light-accent-border: rgba(170, 59, 255, 0.5);
+$light-social-bg: rgba(244, 243, 236, 0.5);
+
+$dark-text: #9ca3af;
+$dark-text-h: #f3f4f6;
+$dark-bg: #16171d;
+$dark-border: #2e303a;
+$dark-code-bg: #1f2028;
+$dark-accent: #c084fc;
+$dark-accent-bg: rgba(192, 132, 252, 0.15);
+$dark-accent-border: rgba(192, 132, 252, 0.5);
+$dark-social-bg: rgba(47, 48, 58, 0.5);
+
+$shadow-light:
+  rgba(0, 0, 0, 0.1) 0 10px 15px -3px,
+  rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+$shadow-dark:
+  rgba(0, 0, 0, 0.4) 0 10px 15px -3px,
+  rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+
+$sans: system-ui, "Segoe UI", Roboto, sans-serif;
+$heading: system-ui, "Segoe UI", Roboto, sans-serif;
+$mono: ui-monospace, Consolas, monospace;
+
+// Breakpoint mixin
+@mixin tablet {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+// Root styles
+:root {
+  --text: #{$light-text};
+  --text-h: #{$light-text-h};
+  --bg: #{$light-bg};
+  --border: #{$light-border};
+  --code-bg: #{$light-code-bg};
+  --accent: #{$light-accent};
+  --accent-bg: #{$light-accent-bg};
+  --accent-border: #{$light-accent-border};
+  --social-bg: #{$light-social-bg};
+  --shadow: #{$shadow-light};
+
+  --sans: #{$sans};
+  --heading: #{$heading};
+  --mono: #{$mono};
+
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color-scheme: light dark;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @include tablet {
+    font-size: 16px;
+  }
+}
+
+// Dark mode
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #{$dark-text};
+    --text-h: #{$dark-text-h};
+    --bg: #{$dark-bg};
+    --border: #{$dark-border};
+    --code-bg: #{$dark-code-bg};
+    --accent: #{$dark-accent};
+    --accent-bg: #{$dark-accent-bg};
+    --accent-border: #{$dark-accent-border};
+    --social-bg: #{$dark-social-bg};
+    --shadow: #{$shadow-dark};
+  }
+
+  #social {
+    .button-icon {
+      filter: invert(1) brightness(2);
+    }
+  }
+}
+
+body {
+  margin: 0;
+}
+
+#root {
+  width: 1126px;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  border-inline: 1px solid var(--border);
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+// Headings
+h1,
+h2 {
+  font-family: var(--heading);
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: 56px;
+  letter-spacing: -1.68px;
+  margin: 32px 0;
+
+  @include tablet {
+    font-size: 36px;
+    margin: 20px 0;
+  }
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 118%;
+  letter-spacing: -0.24px;
+  margin: 0 0 8px;
+
+  @include tablet {
+    font-size: 20px;
+  }
+}
+
+p {
+  margin: 0;
+}
+
+code,
+.counter {
+  font-family: var(--mono);
+}

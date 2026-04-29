@@ -1,0 +1,116 @@
+// Color variables
+$dark-bg: #0b1220;
+$dark-nav: #0a0f1f;
+$card-bg: #121a2b;
+$footer-bg: #050a17;
+$primary-color: #3b82f6;
+$accent-color: orange;
+$text-white: white;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background: $dark-bg;
+  color: $text-white;
+}
+
+// Navbar styles
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background: $dark-nav;
+
+  .logo {
+    color: $accent-color;
+    font-weight: bold;
+  }
+
+  .menu {
+    a {
+      margin-left: 20px;
+      color: $text-white;
+      text-decoration: none;
+    }
+  }
+}
+
+// Hero section
+.hero {
+  height: 250px;
+  background: url("/react-app/public/images/OIP.png") center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  p {
+    opacity: 0.8;
+  }
+}
+
+.hero-content {
+  text-align: center;
+}
+
+// Main container
+.container {
+  display: flex;
+  padding: 40px;
+  gap: 30px;
+
+  .articles {
+    flex: 3;
+  }
+}
+
+// Cards section
+.cards {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.card {
+  background: $card-bg;
+  padding: 20px;
+  border-radius: 15px;
+  flex: 1;
+
+  button {
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+    background: $primary-color;
+    border: none;
+    color: $text-white;
+    border-radius: 8px;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}
+
+// Sidebar
+.sidebar {
+  flex: 1;
+  background: $card-bg;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+// Footer
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: $footer-bg;
+}
