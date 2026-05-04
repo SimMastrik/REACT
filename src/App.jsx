@@ -11,7 +11,6 @@ function App() {
     { id: 1, title: "Post 1", text: "Testo di esempio per la prima card..." },
     { id: 2, title: "Post 2", text: "Testo di esempio per la seconda card..." },
     { id: 3, title: "Post 3", text: "Testo di esempio per la terza card..." },
-    { id: 4, title: "Post 4", text: "Un nuovo post aggiunto dinamicamente!" },
   ];
 
   return (
