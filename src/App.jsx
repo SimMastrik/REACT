@@ -6,40 +6,33 @@ import Footer from "./components/Footer";
 import "./App.scss";
 
 function App() {
-  const menu = [
-    { name: "Home", link: "#" },
-    { name: "Contatti", link: "#" },
-  ];
-  const textLogo = "Logo";
+  // Array di dati dei post
   const posts = [
-    { id: 1, title: "Post 1", content: "..." },
-    { id: 2, title: "Post 2", content: "..." },
-    { id: 3, title: "Post 3", content: "..." },
+    { id: 1, title: "Post 1", text: "Testo di esempio per la prima card..." },
+    { id: 2, title: "Post 2", text: "Testo di esempio per la seconda card..." },
+    { id: 3, title: "Post 3", text: "Testo di esempio per la terza card..." },
+    { id: 4, title: "Post 4", text: "Un nuovo post aggiunto dinamicamente!" },
   ];
 
   return (
-    <div className="App">
-      <h1>{textLogo}</h1>
+    <>
+      <Navbar />
+      <Hero />
 
-      <nav>
-        <ul>
-          {menu.map((item, index) => (
-            <li key={index}>
-              <a href={item.link}>{item.name}</a>
-            </li>
-          ))}
-        </ul>
-      </nav>
-
-      <section className="post-container">
-        {posts.map((post) => (
-          <div key={post.id}>
-            <h3>{post.title}</h3>
-            <p>{post.content}</p>
+      <main className="container">
+        <div className="articles">
+          <div className="cards">
+            {posts.map((post) => (
+              <Card key={post.id} title={post.title} text={post.text} />
+            ))}
           </div>
-        ))}
-      </section>
-    </div>
+        </div>
+
+        <Sidebar />
+      </main>
+
+      <Footer />
+    </>
   );
 }
 
