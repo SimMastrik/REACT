@@ -12,46 +12,35 @@ function App() {
   ];
   const textLogo = "Logo";
   const posts = [
-    {
-      title: "Post 1",
-      text: "Testo di esempio per la prima card...",
-    },
-    {
-      title: "Post 2",
-      text: "Testo di esempio per la seconda card...",
-    },
-    {
-      title: "Post 3",
-      text: "Testo di esempio per la terza card...",
-    },
+    { id: 1, title: "Post 1", content: "..." },
+    { id: 2, title: "Post 2", content: "..." },
+    { id: 3, title: "Post 3", content: "..." },
   ];
-  console.log(posts);
-  //usare map per iterare i post
+
   return (
-    <>
-      <Navbar menu={menu} textLogo={textLogo} />
-      <Hero />
+    <div className="App">
+      <h1>{textLogo}</h1>
 
-      <main className="container">
-        <div className="articles">
-          <div className="cards">
-            {/* posts.map */}
-            <Card title="Post 1" text="Testo di esempio per la prima card..." />
-            <Card
-              title="Post 2"
-              text="Testo di esempio per la seconda card..."
-            />
-            <Card title="Post 3" text="Testo di esempio per la terza card..." />
+      <nav>
+        <ul>
+          {menu.map((item, index) => (
+            <li key={index}>
+              <a href={item.link}>{item.name}</a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      <section className="post-container">
+        {posts.map((post) => (
+          <div key={post.id}>
+            <h3>{post.title}</h3>
+            <p>{post.content}</p>
           </div>
-        </div>
-
-        <Sidebar />
-      </main>
-
-      <Footer />
-    </>
+        ))}
+      </section>
+    </div>
   );
 }
 
 export default App;
-// ricreare il progetto in html homepage con react
