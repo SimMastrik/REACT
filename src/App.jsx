@@ -5,6 +5,7 @@ import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
 import "./App.scss";
 import { useEffect, useState } from "react";
+import Counter from "./components/Counter";
 
 function App() {
   // Array di dati dei post
@@ -45,6 +46,7 @@ function App() {
               <Card key={post.id} title={post.title} text={post.text} />
             ))}
           </div>
+          <Counter />
         </div>
 
         <Sidebar />
