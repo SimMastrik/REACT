@@ -1,4 +1,4 @@
-import Card from "Card";
+import Card from "./Card";
 import Sidebar from "./Sidebar";
 import Counter from "./Counter";
 
