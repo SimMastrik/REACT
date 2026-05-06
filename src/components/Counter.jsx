@@ -1,9 +1,5 @@
-const Counter = () => {
-  const counter = 0;
-  const increment = () => {};
-  const decrement = () => {};
-  const incrementBy = () => {};
-  const decrementBy = () => {};
+const Counter = (props) => {
+  const { counter, increment, decrement, incrementBy, decrementBy } = props;
   return (
     <div>
       <p>{counter}</p>

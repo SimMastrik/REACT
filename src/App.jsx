@@ -8,6 +8,19 @@ import { useEffect, useState } from "react";
 import Counter from "./components/Counter";
 
 function App() {
+  const [counter, setCounter] = useState(0);
+  const incrementByOne = () => {
+    setCounter((prev) => prev + 1);
+  };
+  const decrementByOne = () => {
+    setCounter((prev) => prev - 1);
+  };
+  const incrementBy = (n) => {
+    setCounter((prev) => prev + n);
+  };
+  const decrementBy = (n) => {
+    setCounter((prev) => prev - n);
+  };
   // Array di dati dei post
   const [user, setUser] = useState({
     name: "Simone",
@@ -46,7 +59,13 @@ function App() {
               <Card key={post.id} title={post.title} text={post.text} />
             ))}
           </div>
-          <Counter />
+          <Counter
+            counter={counter}
+            increment={incrementByOne}
+            decrement={decrementByOne}
+            incrementBy={incrementBy}
+            decrementBy={decrementBy}
+          />
         </div>
 
         <Sidebar />
