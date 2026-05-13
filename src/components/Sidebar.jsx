@@ -1,22 +1,27 @@
 import { NavLink } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
-function Sidebar({ items }) {
+function Sidebar({ menuItems }) {
+  const SideLocation = useLocation();
   return (
-    <aside className="sidebar">
+    <nav className="navbar">
       <h3>Menu</h3>
       <ul>
-        {items.map((item) => (
-          <li key={item.id}>
-            <NavLink
-              to={item.slug}
-              className={({ isActive }) => (isActive ? "active-link" : "")}
-            >
-              {item.page}
-            </NavLink>
-          </li>
-        ))}
+        {menuItems.map((item) => {
+          //slug corrisponde path
+          const isActive = location.pathname === item.slug;
+
+          return (
+            <li key={item.id}>
+              {/* applicazione della classe active-link se isActive è true */}
+              <Link to={item.slug} className={isActive ? "active-link" : ""}>
+                {item.page}
+              </Link>
+            </li>
+          );
+        })}
       </ul>
-    </aside>
+    </nav>
   );
 }
 

@@ -46,7 +46,7 @@ function App() {
   //usare map per iterare i post e renderizzare una card per ogni post
   return (
     <div className="app">
-      <Navbar items={menu} />
+      <Navbar menuItems={menu} />
 
       <Hero />
 
@@ -68,7 +68,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
 
-        <Sidebar items={menu} />
+        <Sidebar menuItems={menu} />
       </div>
 
       <Footer changCity={handleChangeCity} user={user} />
