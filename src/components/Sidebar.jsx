@@ -1,8 +1,14 @@
-export default function Sidebar() {
+function Sidebar() {
   return (
     <aside className="sidebar">
-      <h3>Sidebar</h3>
-      <p>Contenuto extra o link utili.</p>
+      <h3>Menu</h3>
+      <ul>
+        <li>Home</li>
+        <li>Servizi</li>
+        <li>Contatti</li>
+      </ul>
     </aside>
   );
 }
+
+export default Sidebar;

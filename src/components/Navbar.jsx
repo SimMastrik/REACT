@@ -1,7 +1,6 @@
-export default function Navbar() {
+function Navbar() {
   return (
     <nav className="navbar">
-      <div className="logo">Logo</div>
       <div className="menu">
         <a href="#">Home</a>
         <a href="#">Contatti</a>
@@ -9,3 +8,4 @@ export default function Navbar() {
     </nav>
   );
 }
+export default Navbar;

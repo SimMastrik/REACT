@@ -1,10 +1,11 @@
-export default function Hero() {
+function Hero() {
   return (
     <section className="Hero">
       <div className="hero-content">
         <h1>Benvenuti</h1>
-        <p>Scopri i nostri contenuti esclusivi</p>
+        <p>Progetto Tirocinio con React</p>
       </div>
     </section>
   );
 }
+export default Hero;

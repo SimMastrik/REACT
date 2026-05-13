@@ -1,3 +1,8 @@
-export default function Footer() {
-  return <footer className="footer">© 2026 Il Mio Sito Flexbox</footer>;
+function Footer() {
+  return (
+    <footer className="footer">
+      <p>© 2026 Progetto React</p>
+    </footer>
+  );
 }
+export default Footer;
