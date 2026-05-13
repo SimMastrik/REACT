@@ -113,4 +113,10 @@ body {
   text-align: center;
   padding: 20px;
   background: $footer-bg;
+
+  // Active Link
+  .active-link {
+    color: #007bff;
+    font-weight: bold;
+  }
 }

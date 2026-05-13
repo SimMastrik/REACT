@@ -25,10 +25,11 @@ function App() {
     setUser({ ...user, city: city });
   };
   const menu = [
-    { name: "Home", link: "#" },
-    { name: "Servizi", link: "#" },
-    { name: "Contatti", link: "#" },
+    { id: 1, page: "Home", slug: "/" },
+    { id: 2, page: "Servizi", slug: "/servizi" },
+    { id: 3, page: "Contatti", slug: "/contatti" },
   ];
+  <Sidebar items={menu} />;
   const textLogo = "Logo";
   const posts = [
     {
