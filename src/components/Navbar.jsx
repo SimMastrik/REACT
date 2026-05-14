@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 
 function Navbar({ menuItems }) {
-  const NavLocation = useLocation(); // Posizione attuale
+  const navLocation = useLocation(); // Posizione attuale
 
   return (
     <nav className="navbar">
@@ -9,7 +9,7 @@ function Navbar({ menuItems }) {
       <ul>
         {menuItems.map((item) => {
           //slug corrisponde path
-          const isActive = NavLocation.pathname === item.slug;
+          const isActive = navLocation.pathname === item.slug;
 
           return (
             <li key={item.id}>
