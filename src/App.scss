@@ -1,30 +1,19 @@
 // ==========================================
 // 1. Variabili CSS — Tema Scuro (unico)
 // ==========================================
-// Filosofia:
-//   • Sfondi blu-grigio profondi, non nero puro (più confortevole su OLED)
-//   • Tre livelli di profondità: sfondo → card → navbar/footer
-//   • Testo principale a bianco-freddo morbido (#e8edf4), non #fff puro
-//   • Testo secondario grigio-azzurro con contrasto WCAG AA garantito
-//   • Primary color sky-blue: più luminoso, chiaramente cliccabile sul dark
-//   • Accent arancio saturo che non sbiadisce sui fondi scuri
-//   • Ombre con tinta blu per coerenza cromatica
+
 :root {
-  // — Sfondi —
-  --bg-color: #111827; // Sfondo pagina: blu-grigio molto scuro
-  --nav-bg: #0d1424; // Navbar più scura per ancoraggio visivo
-  --card-bg: #1e2a3b; // Card: un gradino più chiaro, dà rilievo
-  --footer-bg: #0d1424; // Footer speculare alla navbar
+  --bg-color: #111827;
+  --nav-bg: #0d1424;
+  --card-bg: #1e2a3b;
+  --footer-bg: #0d1424;
 
-  // — Testo —
-  --text-main: #e8edf4; // Bianco freddo morbido, niente abbagliamento
-  --text-muted: #94a3b8; // Grigio-azzurro, contrasto ~4.6:1 (WCAG AA)
+  --text-main: #e8edf4;
+  --text-muted: #94a3b8;
 
-  // — Colori d'azione —
-  --primary-color: #60a5fa; // sky-400: leggibile e cliccabile sul dark
-  --accent-color: #fb923c; // orange-400: vivido, non sbiadisce
+  --primary-color: #60a5fa;
+  --accent-color: #fb923c;
 
-  // — Bordi & Ombre —
   --border-color: #2d3f55;
   --shadow:
     0 4px 12px -2px rgba(0, 0, 0, 0.55), 0 2px 6px -1px rgba(13, 20, 36, 0.6);
@@ -97,8 +86,7 @@ p {
 
 .hero {
   height: 350px;
-  // Scuriamo leggermente meno l'overlay in dark: l'immagine di sfondo
-  // già non compete con il testo, e un overlay più leggero dà respiro
+
   background:
     linear-gradient(rgba(11, 18, 32, 0.65), rgba(11, 18, 32, 0.75)),
     url("/images/OIP.png") center/cover;
@@ -171,10 +159,10 @@ p {
 
   &:hover {
     transform: translateY(-5px);
-    // In dark mode l'hover usa una luce più "fredda" per coerenza
+
     box-shadow:
       0 12px 24px -4px rgba(0, 0, 0, 0.45),
-      0 0 0 1px var(--primary-color); // sottile outline colorato al posto di un'ombra chiara
+      0 0 0 1px var(--primary-color);
   }
 
   h1 {
@@ -188,14 +176,13 @@ p {
   h3 {
     font-size: 1.4rem;
     margin-bottom: 10px;
-    // h3 usa --text-main per il massimo contrasto
+
     color: var(--text-main);
   }
 
   p {
     flex-grow: 1;
     margin-bottom: 20px;
-    // Già gestito dalla regola globale p { color: var(--text-muted) }
   }
 
   button {

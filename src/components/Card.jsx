@@ -13,4 +13,4 @@ export default function Card({ id, title, desc }) {
   );
 }
 // ✅Devo utilizzare UseParams per recuperare i parametri dalla URL e visualizzare i dettagli del post selezionato.
-// 2 utilizza il router on click per navigare alla pagina
+// ✅2 utilizza il router on click per navigare alla pagina

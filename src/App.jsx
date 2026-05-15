@@ -9,8 +9,9 @@ import Footer from "./components/Footer";
 // Pagine
 import Home from "./pages/Home";
 import About from "./pages/About";
+import Contatti from "./pages/Contatti";
+import PostDetail from "./pages/PostDetail";
 import NotFound from "./pages/NotFound";
-import PostDetail from "./pages/PostDetail"; // Importiamo il nuovo file
 
 function App() {
   const [user, setUser] = useState({
@@ -45,12 +46,8 @@ function App() {
     <div className="app">
       <Navbar menuItems={menu} />
 
-      {/* Rimosso Hero da qui per metterlo solo in Home */}
-
       <Routes>
-        {/* Passiamo menu e posts a Home perché ora contiene Hero e Sidebar */}
         <Route path="/" element={<Home posts={posts} menuItems={menu} />} />
-        {/* Rotta Dinamica: Full width come da schema */}
         <Route path="/post/:id" element={<PostDetail posts={posts} />} />
         <Route
           path="/about"
@@ -58,6 +55,7 @@ function App() {
             <About title={aboutPage.title} content={aboutPage.content} />
           }
         />
+        <Route path="/contatti" element={<Contatti />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
 
