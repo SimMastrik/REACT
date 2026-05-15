@@ -5,11 +5,9 @@ import Card from "../components/Card";
 const Home = ({ posts, menuItems }) => {
   return (
     <>
-      {/* L'Hero viene visualizzato solo nella Home */}
       <Hero />
 
       <div className="container">
-        {/* Sezione principale con le card */}
         <main className="articles">
           <div className="cards">
             {posts.map((post) => (
@@ -23,7 +21,6 @@ const Home = ({ posts, menuItems }) => {
           </div>
         </main>
 
-        {/* La Sidebar viene spostata qui per apparire solo nella Home */}
         <Sidebar menuItems={menuItems} />
       </div>
     </>
